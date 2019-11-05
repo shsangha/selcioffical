@@ -1,0 +1,105 @@
+.carousel {
+  width: 150%;
+  background: red;
+  transform: translateX(-27.5%);
+  position: relative;
+  height: 70vh;
+}
+
+.carousel_image {
+  max-height: 70vh;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  height: 25rem; // get rid of this later
+  width: 100%;
+  position: fixed;
+  color: white;
+  font-size: 17rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.about {
+  padding-top: 25rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  perspective: 100px;
+  overflow: visible;
+}
+
+.pics {
+  background: black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: visible;
+  transform-origin: 25% 50%;
+  transform: scale(0.2);
+}
+
+.footer {
+  height: 25rem;
+  background: black;
+}
+
+.img {
+  border: 2px solid green;
+  min-width: 50%;
+  font-size: 5rem;
+  //background: url("../../static/img/samuri.jpeg");
+  position: relative;
+  //  left: -90%;
+}
+/*
+
+.img1 {
+  background: green;
+  min-width: 50%;
+  font-size: 5rem;
+  //background: url("../../static/img/img_0910.jpeg");
+  position: relative;
+  left: -90%;
+}
+
+.img2 {
+  background: blue;
+  min-width: 50%;
+  font-size: 5rem;
+  //background: url("../../static/img/img_1143.jpeg");
+  position: relative;
+  right: 90%;
+}
+
+.imgBefore {
+  background: white;
+  min-width: 50%;
+  font-size: 5rem;
+  //background: url("../../static/img/img_1143.jpeg");
+  position: relative;
+  left: -90%;
+}
+
+.imgAfter {
+  background: purple;
+  min-width: 50%;
+  font-size: 5rem;
+  //background: url("../../static/img/img_1143.jpeg");
+  position: relative;
+  right: 90%;
+}
+
+.video {
+  height: 100vh;
+  background: black;
+}
+
+*/
+.fade {
+  opacity: 1;
+  //transform: rotateX(-2deg) scale(0.95);
+}
