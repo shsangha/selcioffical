@@ -1,34 +1,76 @@
-.main {
-  min-height: 12rem;
-  height: 60vh;
-  width: 100%;
-  overflow-x: hidden;
-  margin-top: 5vh;
+$base-parallax-perspective: 1px;
+
+@function parallax-scale-factor($z-distance) {
+  @return ($base-parallax-perspective - $z-distance) /
+    $base-parallax-perspective;
+}
+.slider {
+  display: flex;
+  width: 100vw;
+  transform-style: preserve-3d;
+  transform: translateX(-90vw);
 }
 
-.carousel {
-  width: 100vw;
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.slide {
+  @extend .noselect;
+  min-width: 50vw;
+  height: calc(var(--vh, 1vh) * 60);
+  position: relative;
+}
+
+.slide:nth-child(2) {
+  .paralax_content {
+    transform-origin: 0% 0%;
+    position: absolute;
+
+    transform: translateZ(-3px) translateX(-120vw) translateY(75vh)
+      scale(parallax-scale-factor(-3));
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.slide:nth-child(3) {
+  .paralax_content {
+    transform-origin: 0% 0%;
+    position: absolute;
+
+    transform: translateZ(-2px) translateX(20vw) translateY(50vh)
+      scale(parallax-scale-factor(-2));
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.slide:nth-child(4) {
+  .paralax_content {
+    transform-origin: 0% 0%;
+    position: absolute;
+
+    transform: translateZ(-1px) translateX(60vw) translateY(25vh)
+      scale(parallax-scale-factor(-1));
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.paralax_content {
+  width: 100%;
   height: 100%;
+  transform-style: flat;
+  perspective: 1000px;
+  perspective-origin: 100% 0;
 }
 
 .img {
-  display: block;
-  height: 60vh;
-  width: 100vw;
-  opacity: 0.5;
-}
-
-@media only screen and (orientation: landscape) {
-  .carousel {
-    transform: translateX(-25%);
-    width: 150vw;
-    height: 100%;
-  }
-
-  .img {
-    display: block;
-    height: 70vh;
-    width: 50vw;
-    opacity: 0.5;
-  }
+  width: 100%;
+  height: 100%;
 }
